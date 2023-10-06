@@ -1,0 +1,76 @@
+
+/* StyleFile.css for Login Page */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('Capture1.PNG'); /* Replace 'background-image.jpg' with your image file path */
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    max-width: 200px; /* Reduce container width */
+    margin: 0 auto;
+    padding: 100px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px; /* Reduce heading font size */
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px; /* Reduce margin bottom for labels */
+    font-weight: bold;
+    font-size: 14px; /* Reduce label font size */
+}
+
+
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Full width input fields */
+    padding: 5px; /* Reduce padding for input fields */
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px; /* Reduce border-radius */
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 8px 16px; /* Reduce padding for buttons */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation Buttons */
+.navigation-button {
+    background-color: #ccc;
+    color: #333;
+    padding: 8px 16px; /* Reduce padding for buttons */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.navigation-button:hover {
+    background-color: #999;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up Page</title>
+        <link rel="stylesheet" href="new.css" />
+</head>
+<div class="container language-switcher">
+        <a href="Signup.html">English</a>
+        <a href="SignUp_fr.html">Français</a>
+        <a href="SignUp_kin.html">Kinyarwanda</a>
+      </div>
+<body>
+    <h1>Sign Up</h1>
+    <form id="signupForm">
+		<fieldset>
+		<label for="first-name">Enter Your First Name:
+           <input type="text" id="first-name" name="first-name" placeholder="First name" required/><br>
+        </label>
+        <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" placeholder="last name"
+         name="last-name" type="text" required /><br>
+         </label>
+         <label for="email">Enter Your Email:
+        <input type="email" id="email" name="email" placeholder="Email" required/><br>
+         </label>
+        <label for="student-photo">Upload Photo (jpg/png only):</label>
+<input type="file" id="student-photo" name="student-photo" accept=".jpg, .png" required /><br>
+
+<label for="certificates">Upload Certificates (pdf only):</label>
+<input type="file" id="certificates" name="certificates" accept=".pdf" required /><br>
+        <label for="phone-number">Enter Your Number:
+            <input id="phone-number" name="phone-number"placeholder="phone-number" type="tel" required  /><br>
+        </label>
+         <label for="password">Create a New Password: 
+        <input minlength="8" type="password" id="password" placeholder="Password" required/><br>
+         </label>
+       <label for="faculty">Enter Your Faculty:
+            <input id="faculty" placeholder="Faculty" name="faculty" type="text" required /><br>
+        </label>
+          <label for="department">Enter Your Department:
+            <input id="department" placeholder="Department" name="department" type="text" required /><br>
+        </label>
+           <label for="address">Enter Your Address:
+            <input id="address" placeholder="Address" name="address" type="text" required /><br>
+        </label>
+
+        <label for="place-of-birth">Enter Your Place of Birth:
+            <input id="place-of-birth" name="place-of-birth" type="text" required /><br>
+        </label> 
+        <button type="submit">Sign Up</button>
+        <button onclick="location.href='login.html'">Back to Login</button>
+
+        </fieldset>
+        
+    </form>
+    
+</body>
+
+</html>
+<script>
+document.getElementById('signupForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone-number').value;
+    const studentPhotoInput = document.getElementById('student-photo');
+    const certificatesInput = document.getElementById('certificates');
+
+    // Regular expressions for email and phone number validation
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const phoneRegex = /^[0-9]{10}$/;
+
+    if (!emailRegex.test(email)) {
+        alert('Invalid email format. Please enter a valid email address.');
+    } else if (!phoneRegex.test(phone)) {
+        alert('Invalid phone number format. Please enter a 10-digit phone number.');
+    } else if (studentPhotoInput.files.length === 0) {
+        alert('Please upload a student photo (jpg/png only).');
+    } else if (certificatesInput.files.length === 0) {
+        alert('Please upload certificates (pdf only).');
+    } else {
+        // Check the file types
+        const studentPhotoFile = studentPhotoInput.files[0];
+        const certificatesFile = certificatesInput.files[0];
+
+        if (!/\.jpg|\.png/.test(studentPhotoFile.name.toLowerCase())) {
+            alert('Invalid student photo file type. Please upload a jpg or png file.');
+        } else if (!/\.pdf/.test(certificatesFile.name.toLowerCase())) {
+            alert('Invalid certificates file type. Please upload a pdf file.');
+        } else {
+            // Submit the form if validation passes
+            this.submit();
+        }
+    }
+});
+
+</script>
+
+
+
+
+
+
